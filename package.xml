@@ -1,0 +1,12 @@
+<package>
+  <name>rvmi_workspace_setup</name>
+  <version>1.0.0</version>
+  <description>
+    Configuration files for RVMI development workspace
+  </description>
+  <maintainer email="francesco@m-tech.aau.dk">Francesco Rovida</maintainer>
+  <license>BSD</license>
+  <author>Francesco Rovida</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

@@ -1,0 +1,11 @@
+# THIS ROSINSTALL FILE CONTAINS TESTS AND EXAMPLES SKILLS
+
+### LIBS
+- git: {local-name: libs/rvmi_workspace_setup, uri: 'git@github.com:RVMI/rvmi_workspace_setup.git'}
+- git: {local-name: libs/rosmon, uri: 'git@github.com:xqms/rosmon.git'}
+- git: {local-name: libs/skiros2/skiros2, uri: 'git@github.com:RVMI/skiros2.git'}
+- git: {local-name: libs/skiros2/skiros2_std_lib, uri: 'git@github.com:RVMI/skiros2_std_lib.git'}
+
+### SKILLS
+- git: {local-name: examples/skiros2_template_lib, uri: 'git@github.com:RVMI/skiros2_template_lib.git'}
+- git: {local-name: examples/skiros2_test_lib, uri: 'git@github.com:RVMI/skiros2_test_lib.git'}
