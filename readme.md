@@ -13,12 +13,12 @@ Then the wstools and catkin-tools:
 
 Create new workspace:
 > $ cd ~  
-> $ mkdir scalable_ws  
+> $ mkdir rvmi_ws  
 
 Initialize your workspace:
 
 > $ cd rvmi_ws  
-> $ wstool init src https://raw.githubusercontent.com/RVMI/rvmi_workspace_setup/master/config/full.rosinstall  
+> $ wstool init src https://raw.githubusercontent.com/RVMI/rvmi_workspace_setup/master/config/examples.rosinstall
 > $ rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y  
 > $ catkin build  
 > $ source devel/setup.bash  
