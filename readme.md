@@ -31,13 +31,6 @@ Install the packages:
 > catkin build  
 > source devel/setup.bash  
 
-### Updating the workspace from source
-To update the workspace run:
-
-> rvmi update full.rosinstall
-
-The default rosinstall is <code>full.rosinstall</code>. See all rosinstall in <code>rvmi_workspace_setup/config</code>.
-
 ### Bash commands
 Source the workspace:
 > cd ~/scalable_ws/  
@@ -49,4 +42,5 @@ Build the workspace:
 Run the tests:
 > catkin run_tests
 
-After running catkin build some bash commands will be available. (check them out typing rvmi and tab).
+After running catkin build some bash commands will be available (check them out typing rvmi and tab). For example, you can run *rvmi update* to git pull all packages.
+
