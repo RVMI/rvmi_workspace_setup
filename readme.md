@@ -15,8 +15,9 @@ Create and initialize new workspace:
 > cd ~  
 > mkdir rvmi_ws  
 > cd rvmi_ws  
-> wstool init src https://raw.githubusercontent.com/RVMI/rvmi_workspace_setup/master/config/arm_motion_base.rosinstall
-> catkin init
+> wstool init src \\  
+> https://raw.githubusercontent.com/RVMI/rvmi_workspace_setup/master/config/arm_motion_base.rosinstall  
+> catkin init  
 > catkin config --extend /opt/ros/kinetic
 
 You can replace arm_motion_base.rosinstall with different configurations (have a look into config folder for all the options):  
@@ -32,6 +33,12 @@ Build the workspace:
 
 Source the workspace (this line should be added also to your bash configuration ~/.bashrc):
 > source ~/rvmi_ws/devel/setup.bash
+
+In case _package_ is still missing, try to search for it:
+> apt-cache search ros-kinetic-_package_  
+
+If it exists, you can install it manually:
+> sudo apt-get install ros-kinetic-_package_  
 
 ### Bash commands
 
