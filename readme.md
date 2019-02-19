@@ -11,14 +11,13 @@ If you want to use SSH:
 Then the wstools and catkin-tools:
 > sudo apt-get install python-wstool python-catkin-tools
 
-Create new workspace:
+Create and initialize new workspace:
 > cd ~  
 > mkdir rvmi_ws  
 > cd rvmi_ws  
-
-Initialize your workspace:
-
 > wstool init src https://raw.githubusercontent.com/RVMI/rvmi_workspace_setup/master/config/arm_motion_base.rosinstall
+> catkin init
+> catkin config --extend /opt/ros/kinetic
 
 You can replace arm_motion_base.rosinstall with different configurations (have a look into config folder for all the options):  
 
