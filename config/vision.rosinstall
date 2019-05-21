@@ -1,0 +1,14 @@
+# THIS IS THE MAIN ROSINSTALL FILE FOR RVMI VISION ALGORITHMS DEVELOPEMENT
+
+### LIBS
+- git: {local-name: libs/rvmi_workspace_setup, uri: 'git@github.com:RVMI/rvmi_workspace_setup.git'}
+
+### RVMI libs
+- git: {local-name: libs_rvmi/realsense, uri: 'git@github.com:intel-ros/realsense.git', version: 'tags/1.8.0'}
+- git: {local-name: libs_rvmi/vision, uri: 'git@git.rvmi.aau.dk:bjarne/vision.git'}
+#- git: {local-name: libs_rvmi/vicon/cppViconStream, uri: 'https://gitlab.com/hwopereis/cppViconStream.git'}
+#- git: {local-name: libs_rvmi/vicon/ros_viconstream, uri: 'https://gitlab.com/hwopereis/ros_viconstream.git'}
+
+### SKILLS
+- git: {local-name: skills/skills_sandbox, uri: 'git@github.com:RVMI/skills_sandbox.git'}
+
