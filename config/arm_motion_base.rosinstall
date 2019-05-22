@@ -13,4 +13,4 @@
 - git: {local-name: robots/bh_robot, uri: 'git@github.com:RVMI/bh_robot.git' }
 
 ### SKILLS
-- git: {local-name: skills/skills_sandbox, uri: 'git@github.com:RVMI/skills_sandbox.git'}
+- git: {local-name: skills/skills_sandbox, uri: 'git@github.com:RVMI/skills_sandbox.git', version: 'develop'}
