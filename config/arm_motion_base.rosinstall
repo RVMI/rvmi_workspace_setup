@@ -1,4 +1,4 @@
-# THIS IS THE MAIN ROSINSTALL FILE FOR RVMI VISION ALGORITHMS DEVELOPEMENT
+# THIS IS THE MAIN ROSINSTALL FILE FOR RVMI ARM MOTION
 
 ### LIBS
 - git: {local-name: libs/rvmi_workspace_setup, uri: 'git@github.com:RVMI/rvmi_workspace_setup.git'}
@@ -13,5 +13,4 @@
 - git: {local-name: robots/bh_robot, uri: 'git@github.com:RVMI/bh_robot.git' }
 
 ### SKILLS
-- git: {local-name: skills/skiros2_template_lib, uri: 'git@github.com:RVMI/skiros2_template_lib.git'}
-
+- git: {local-name: skills/skills_sandbox, uri: 'git@github.com:RVMI/skills_sandbox.git'}

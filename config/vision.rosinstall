@@ -11,4 +11,5 @@
 
 ### SKILLS
 - git: {local-name: skills/skills_sandbox, uri: 'git@github.com:RVMI/skills_sandbox.git'}
+- git: {local-name: skills/vision_skills, uri: 'git@github.com:RVMI/vision_skills.git'}
 
