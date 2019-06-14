@@ -2,6 +2,7 @@
 
 ### LIBS
 - git: {local-name: libs/rvmi_workspace_setup, uri: 'git@github.com:RVMI/rvmi_workspace_setup.git'}
+- git: {local-name: libs/gazebo_models_psa, uri: 'git@github.com:RVMI/gazebo_models_psa.git'}
 
 ### RVMI libs
 - git: {local-name: libs_rvmi/realsense, uri: 'git@github.com:intel-ros/realsense.git', version: 'tags/1.8.0'}
