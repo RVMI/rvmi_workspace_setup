@@ -15,3 +15,6 @@
 
 ### SKILLS
 - git: {local-name: skills/skills_sandbox, uri: 'git@github.com:RVMI/skills_sandbox.git', version: 'develop'}
+
+### LAUNCH
+- git: {local-name: start/rvmi_launch, uri: 'git@github.com:RVMI/rvmi_launch.git', version: 'master'}
