@@ -22,7 +22,8 @@ Create and initialize new workspace:
 
 You can replace arm_motion_base.rosinstall with different configurations (have a look into config folder for all the options):  
 
-* *arm_motion_base.rosinstall*: robot drivers, description, low_level_logic and skiros
+* *arm_motion_base.rosinstall*: robot drivers, bh_robot description, low_level_logic, skiros and general skills
+* *vision.rosinstall*: realsense camera driver, vision packages and skills
 * *skiros_examples.rosinstall*: skiros plus skills examples
 
 Install the dependencies:
