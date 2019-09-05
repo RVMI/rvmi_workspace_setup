@@ -14,11 +14,11 @@ function rvmi() {
 	    ;;
 	l|launch)
 	    shift
-	    roslaunch rvmi_workspace_setup $*
+	    roslaunch rvmi_launch $*
 	    ;;
 	L|LAUNCH)
 	    shift
-	    rosrun rosmon rosmon --name=rosmon rvmi_workspace_setup $*
+	    mon launch rvmi_launch $*
 	    ;;
   u|update)
 	    shift
@@ -48,7 +48,7 @@ function _rvmi() {
 		    COMPREPLY=( $(compgen -W "${packages}" -- $cur) )
 		    ;;
 		l|launch|L|LAUNCH)
-		    local launchfiles=$(find $(rospack find rvmi_workspace_setup) -name '*.launch' -type f -printf "%f\n")
+		    local launchfiles=$(find $(rospack find rvmi_launch) -name '*.launch' -type f -printf "%f\n")
 		    COMPREPLY=( $(compgen -W "${launchfiles}" -- $cur) )
 		    ;;
 	    esac
