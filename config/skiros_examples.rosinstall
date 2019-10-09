@@ -5,7 +5,5 @@
 - git: {local-name: libs/rosmon, uri: 'git@github.com:xqms/rosmon.git'}
 - git: {local-name: libs/skiros2/skiros2, uri: 'git@github.com:RVMI/skiros2.git'}
 - git: {local-name: libs/skiros2/skiros2_std_lib, uri: 'git@github.com:RVMI/skiros2_std_lib.git'}
-
-### SKILLS
-- git: {local-name: skills/skiros2_template_lib, uri: 'git@github.com:RVMI/skiros2_template_lib.git'}
-- git: {local-name: skills/skiros2_test_lib, uri: 'git@github.com:RVMI/skiros2_test_lib.git'}
+- git: {local-name: libs/skiros2/skiros2_template_lib, uri: 'git@github.com:RVMI/skiros2_template_lib.git'}
+- git: {local-name: libs/skiros2/skiros2_test_lib, uri: 'git@github.com:RVMI/skiros2_test_lib.git'}
