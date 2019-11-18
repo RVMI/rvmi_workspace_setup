@@ -2,7 +2,6 @@
 
 ### LIBS
 - git: {local-name: libs/rvmi_workspace_setup, uri: 'git@github.com:RVMI/rvmi_workspace_setup.git'}
-- git: {local-name: libs/rosmon, uri: 'git@github.com:xqms/rosmon.git'}
 - git: {local-name: libs/iiwa_stack, uri: 'git@github.com:RVMI/iiwa_stack.git', version: 'master'}
 - git: {local-name: libs/skiros2/skiros2, uri: 'git@github.com:RVMI/skiros2.git', version: 'develop'}
 - git: {local-name: libs/skiros2/skiros2_std_lib, uri: 'git@github.com:RVMI/skiros2_std_lib.git', version: 'develop'}
