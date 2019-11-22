@@ -14,16 +14,16 @@ fi
 
 # Python Dependencies
 if roscd skiros2; then
-    cd .. && pip install -r requirements.txt --user
+    cd .. && python -m pip install -r requirements.txt --user
 fi
 if roscd skills_sandbox; then
-    pip install -r requirements.txt --user
+    python -m pip install -r requirements.txt --user
 fi
 if roscd vision; then
-    pip install -r requirements.txt --user
+    python -m pip install -r requirements.txt --user
 fi
 if roscd low_level_logics; then
-    pip install -r requirements.txt --user
+    python -m pip install -r requirements.txt --user
 fi
 
 # Install realsense drivers
