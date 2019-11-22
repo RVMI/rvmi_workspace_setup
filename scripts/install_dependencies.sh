@@ -1,4 +1,6 @@
 #!/bin/bash
+#Install software dependencies
+
 echo "This script is intended to run in the root of your catkin workspace, e.g. ~/catkin_ws. Your workspace needs to be built at least once before."
 
 # To get access to ros commands
