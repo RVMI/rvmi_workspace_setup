@@ -72,6 +72,7 @@ if check-pkg-installed ros-$ROS_DISTRO-desktop -eq 0; then
   sudo rosdep init
   rosdep update
   sudo apt install python-wstool python-catkin-tools
+  echo "ROS $ROS_DISTRO installed."
 else
   echo "ROS $ROS_DISTRO already installed."
 fi
