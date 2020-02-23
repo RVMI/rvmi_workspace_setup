@@ -19,13 +19,13 @@ if roscd skiros2; then
     cd .. && python -m pip install -r requirements.txt --user
 fi
 if roscd skills_sandbox; then
-    python -m pip install -r requirements.txt --user
+    python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
 fi
 if roscd vision; then
-    python -m pip install -r requirements.txt --user
+    python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
 fi
 if roscd low_level_logics; then
-    python -m pip install -r requirements.txt --user
+    python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
 fi
 
 # Install realsense drivers
