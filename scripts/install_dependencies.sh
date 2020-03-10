@@ -16,7 +16,7 @@ fi
 
 # Python Dependencies
 if roscd skiros2; then
-    cd .. && python -m pip install -r requirements.txt --user
+    cd .. && python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
 fi
 if roscd skills_sandbox; then
     python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
