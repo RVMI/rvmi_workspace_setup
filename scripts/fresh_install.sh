@@ -13,8 +13,8 @@ function check-pkg-installed
         echo "Please specify package name" 1>&2
         exit -1
     else
-        if `apt list --installed 2>/dev/null | grep -iqwe ^$1/`; then
-            if `apt list 2>/dev/null | grep -iqwe ^$1/`; then
+        if ! `apt list --installed 2>/dev/null | grep -iqwe ^$1`; then
+            if ! `apt list 2>/dev/null | grep -iqwe ^$1`; then
                 echo "Package $1 does not exist" 1>&2
                 exit -1
             fi
@@ -27,20 +27,10 @@ function check-pkg-installed
 
 function install-pkg
 {
-    if [ $# -eq 0 ]; then
-        echo "Please specify package name" 1>&2
-        exit -1
+    if check-pkg-installed $1 -eq 0; then
+        sudo apt-get install $1
     else
-        if `apt list --installed 2>/dev/null | grep -iqwe ^$1/`; then
-            if `apt list 2>/dev/null | grep -iqwe ^$1/`; then
-                echo "Package $1 does not exist" 1>&2
-                exit -1
-            else
-                sudo apt-get install $1
-            fi
-        else
-            echo "$1 already installed."
-        fi
+        echo "$1 already installed."
     fi
 }
 
