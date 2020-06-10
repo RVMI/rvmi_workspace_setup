@@ -68,4 +68,4 @@ else
 fi
 
 #ROS compilation utils
-install-pkgs python-catkin-tools python-wstool
+install-pkgs python-catkin-tools python-wstool python-pip
