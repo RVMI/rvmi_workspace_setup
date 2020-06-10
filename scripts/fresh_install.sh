@@ -28,7 +28,7 @@ function check-pkg-installed
 function install-pkg
 {
     if check-pkg-installed $1 -eq 0; then
-        sudo apt-get install $1
+        sudo apt-get install -y $1
     else
         echo "$1 already installed."
     fi
@@ -63,7 +63,7 @@ sudo apt update
 
 #ROS install
 if check-pkg-installed ros-$ROS_DISTRO-desktop -eq 0; then
-    sudo apt install ros-$ROS_DISTRO-desktop
+    sudo apt install -y ros-$ROS_DISTRO-desktop
     install-pkg $PYTHON-rosdep
     sudo rosdep init
     rosdep update
