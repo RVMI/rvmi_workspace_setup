@@ -15,32 +15,44 @@ if roscd skiros2; then
 fi
 
 # Python Dependencies
+PIP="python$ROS_PYTHON_VERSION -m pip"
 if roscd skiros2; then
-    cd .. && python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
+    cd .. && $PIP install -r requirements.txt --user
 fi
 if roscd skills_sandbox; then
-    python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
+    $PIP install -r requirements.txt --user
+    if [[ $ROS_PYTHON_VERSION == 3 ]]; then
+        $PIP install --upgrade git+https://github.com/kivy/kivy
+    fi
 fi
 if roscd vision; then
-    python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
+    $PIP install -r requirements.txt --user
+    if [[ $ROS_PYTHON_VERSION == 3 ]]; then
+        $PIP install --upgrade git+https://github.com/emmanuelkring/pypcd.git
+    fi
 fi
 if roscd low_level_logics; then
-    python$ROS_PYTHON_VERSION -m pip install -r requirements.txt --user
+    $PIP install -r requirements.txt --user
 fi
 
 # Install realsense drivers
+# Currently not available on Ubuntu 20.04
 # Get distribution environment variables
-. /etc/lsb-release
-export repo="http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo"
-export repo_check="$repo $DISTRIB_CODENAME main"
-export repo_add="$repo main"
-if ! grep -q "^deb .*$repo_check" /etc/apt/sources.list /etc/apt/sources.list.d/*; then\
-    sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
-    sudo add-apt-repository "$repo_add" -u
-else
-    echo "Realsense repo exists already."
-fi
+if [[ $ROS_PYTHON_VERSION == 2 ]]; then
+    . /etc/lsb-release
+    export repo="http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo"
+    export repo_check="$repo $DISTRIB_CODENAME main"
+    export repo_add="$repo main"
+    if ! grep -q "^deb .*$repo_check" /etc/apt/sources.list /etc/apt/sources.list.d/*; then\
+        sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+        sudo add-apt-repository "$repo_add" -u
+    else
+        echo "Realsense repo exists already."
+    fi
 
-sudo apt update
-sudo apt install librealsense2-dkms librealsense2-utils librealsense2-dev
+    sudo apt update
+    sudo apt install librealsense2-dkms librealsense2-utils librealsense2-dev
+else
+    echo "WARNING: realsense drivers are currently not available for this platform"
+fi
