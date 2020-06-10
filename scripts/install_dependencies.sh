@@ -20,16 +20,16 @@ if roscd skiros2; then
     cd .. && $PIP install -r requirements.txt --user
 fi
 if roscd skills_sandbox; then
-    $PIP install -r requirements.txt --user
     if [[ $ROS_PYTHON_VERSION == 3 ]]; then
         $PIP install --upgrade git+https://github.com/kivy/kivy
     fi
+    $PIP install -r requirements.txt --user
 fi
 if roscd vision; then
-    $PIP install -r requirements.txt --user
     if [[ $ROS_PYTHON_VERSION == 3 ]]; then
         $PIP install --upgrade git+https://github.com/emmanuelkring/pypcd.git
     fi
+    $PIP install -r requirements.txt --user
 fi
 if roscd low_level_logics; then
     $PIP install -r requirements.txt --user
