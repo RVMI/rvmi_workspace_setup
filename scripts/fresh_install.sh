@@ -44,7 +44,11 @@ function install-pkgs
 #MAIN------------------------
 
 ubuntu_release=$(get-ubuntu-release)
-if [[ $ubuntu_release == *"18.04"* ]]; then
+PYTHON=python
+if [[ $ubuntu_release == *"20.04"* ]]; then
+  ROS_DISTRO="noetic"
+  PYTHON=python3
+elif [[ $ubuntu_release == *"18.04"* ]]; then
   ROS_DISTRO="melodic"
 elif [[ $ubuntu_release == *"16.04"* ]]; then
   ROS_DISTRO="kinetic"
@@ -59,13 +63,18 @@ if check-pkg-installed ros-$ROS_DISTRO-desktop -eq 0; then
   sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
   sudo apt update
   sudo apt install ros-$ROS_DISTRO-desktop
+  install-pkg $PYTHON-rosdep
   sudo rosdep init
   rosdep update
-  sudo apt install python-wstool python-catkin-tools
   echo "ROS $ROS_DISTRO installed."
 else
   echo "ROS $ROS_DISTRO already installed."
 fi
 
-#ROS compilation utils
-install-pkgs python-catkin-tools python-wstool python-pip
+#ROS compilation utils and pip
+install-pkgs $PYTHON-wstool $PYTHON-pip
+if [[ $ROS_DISTRO == "noetic" ]]; then
+    $PYTHON -m pip install --user git+https://github.com/catkin/catkin_tools.git
+else
+    install-pkg $PYTHON-catkin-tools
+fi
