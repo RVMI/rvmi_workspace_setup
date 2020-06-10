@@ -14,7 +14,7 @@ function check-pkg-installed
         exit -1
     else
         if ! `apt list --installed 2>/dev/null | grep -iqwe ^$1`; then
-            if ! `apt list 2>/dev/null | grep -iqwe ^$1`; then
+            if [[ -z `apt-cache search --names-only ^$1` ]]; then
                 echo "Package $1 does not exist" 1>&2
                 exit -1
             fi
